@@ -1,0 +1,43 @@
+{
+    "name": "andypotanin/sample-wordpress-app",
+  "minimum-stability": "dev",
+
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://repository.usabilitydynamics.com"
+    }
+  ],
+  "config": {
+    "preferred-install": "source",
+    "github-protocols": [ "ssh" ],
+    "vendor-dir": "vendor/libraries",
+    "bin-dir": "vendor/bin",
+    "component-dir": "vendor/components",
+    "optimize-autoloader": true
+  },
+
+  "extra": {
+    "installer-paths": {
+      "vendor/libraries/{$vendor}/{$name}": [
+        "type:wordpress-library"
+      ],
+      "vendor/modules/{$name}": [
+        "type:wordpress-muplugin",
+        "type:wordpress-module"
+      ],
+      "vendor/plugins/{$name}": [
+        "type:wordpress-plugin",
+        "type:wpackagist-plugin"
+      ],
+      "vendor/themes/{$name}": [
+        "type:wordpress-theme"
+      ]
+    }
+},
+    "require": {
+        "automattic/wordpress": "4.0-beta2",
+        "usabilitydynamics/lib-installer": "master",
+        "usabilitydynamics/wp-splash": "master"
+    }
+}
